@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/fragment_incident_swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/quantum_grey100"
+        android:orientation="vertical"
+        tools:context=".ui.incident.IncidentFragment">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_incidents"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:padding="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_incident" />
+
+        <TextView
+            android:id="@+id/fm_incident_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/none"
+            android:textSize="20sp" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

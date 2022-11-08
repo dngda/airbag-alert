@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "743295057534",
+    "project_id": "airbag-alert",
+    "storage_bucket": "airbag-alert.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743295057534:android:cde8a4219f0ac37d8ee22f",
+        "android_client_info": {
+          "package_name": "com.airmineral.airbagalert"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743295057534-7jv8v6d7cgq4pmts6li2adeong6d2q8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmoRU-M5W5GdzFUYtZta7zSI172O-_Nh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743295057534-7jv8v6d7cgq4pmts6li2adeong6d2q8b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
