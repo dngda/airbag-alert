@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:theme="@style/ThemeOverlay.AirbagAlert.FullscreenContainer"
+        tools:context=".ui.incident.AlertActivity">
+
+        <ImageView
+            android:id="@+id/alert_image"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:contentDescription="@string/ilustrasi"
+            android:src="@drawable/img_crash"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fullscreen_content" />
+
+        <TextView
+            android:id="@+id/fullscreen_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal"
+            android:keepScreenOn="true"
+            android:text="@string/tv_alert"
+            android:textColor="@color/black"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/alert_info_1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/alert_info"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alert_image" />
+
+        <TextView
+            android:id="@+id/alert_info_car_id"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alert_info_1"
+            tools:text="AB 1231 WH" />
+
+        <TextView
+            android:id="@+id/alert_info_car_model"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alert_info_car_id"
+            tools:text="Model: BMW 320i" />
+
+        <TextView
+            android:id="@+id/alert_info_3"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/kerusakan"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alert_info_car_model" />
+
+        <TextView
+            android:id="@+id/alert_info_car_damaged"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:paddingHorizontal="32dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alert_info_3"
+            tools:text="Ajur kabeh ngasi koyo tahu gejrot, Ajur kabeh ngasi koyo tahu gejrot" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_alert_go"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorPrimary"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="16dp"
+            android:text="@string/btn_alert"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:icon="@drawable/ic_map"
+            app:iconSize="32dp"
+            app:iconTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="incident"
+            type="com.airmineral.airbagalert.data.model.Incident" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="12dp"
+        app:strokeColor="@color/colorPrimary">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/item_incident_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="16dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_crash"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="@string/ilustrasi" />
+
+            <TextView
+                android:id="@+id/item_incident_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:fontFamily="sans-serif"
+                android:text="@{incident.date}"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@id/item_incident_icon"
+                app:layout_constraintTop_toTopOf="@id/item_incident_icon"
+                tools:text="Minggu, 20 Oktober 2022" />
+
+            <TextView
+                android:id="@+id/item_incident_time"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="sans-serif"
+                android:text="@{incident.time}"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/item_incident_icon"
+                tools:text="21:00 WIB" />
+
+            <TextView
+                android:id="@+id/item_incident_car_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-4dp"
+                android:fontFamily="sans-serif"
+                android:text="@{incident.car_id}"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                android:textStyle="bold|italic"
+                app:layout_constraintStart_toStartOf="@+id/item_incident_date"
+                app:layout_constraintTop_toBottomOf="@id/item_incident_date"
+                tools:text="AB 1231 ZQ" />
+
+            <TextView
+                android:id="@+id/item_incident_car_model"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-4dp"
+                android:fontFamily="sans-serif"
+                android:paddingBottom="8dp"
+                android:text="@{incident.car_model}"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@+id/item_incident_date"
+                app:layout_constraintTop_toBottomOf="@id/item_incident_car_id"
+                tools:text="Toyota Avanza" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>
