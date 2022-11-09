@@ -52,8 +52,8 @@ class MapsActivity : BaseActivity<ActivityMapsBinding>(), OnMapReadyCallback, Lo
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map_view) as SupportMapFragment
 
-        val lat = Incident.DUMMY.latitude.toDouble()
-        val long = Incident.DUMMY.longitude.toDouble()
+        val lat = Incident.DUMMY.latitude
+        val long = Incident.DUMMY.longitude
 
         locationManager = getSystemService(LOCATION_SERVICE) as LocationManager
         if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {

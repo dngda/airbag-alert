@@ -8,29 +8,30 @@ import kotlinx.parcelize.Parcelize
 data class Incident(
     @DocumentId
     val id: String,
-    val latitude: String,
-    val longitude: String,
+    val latitude: Double,
+    val longitude: Double,
     val date: String,
     val time: String,
     val car_id: String,
     val car_model: String,
     val damaged: String,
+    val handled_by: String,
 ) : Parcelable {
-    constructor() : this("", "", "", "", "", "", "", "")
+
+    constructor() : this("", 0.0, 0.0, "", "", "", "", "", "")
 
     companion object {
         const val COLLECTION_NAME = "incidents"
-        val EMPTY = Incident("", "", "", "", "", "", "", "")
         val DUMMY = Incident(
             "123",
-            "-7.771915",
-            "110.387036",
-            "Senin, 18 Oktober 2022",
-            "21:00",
+            -7.771915,
+            110.387036,
+            "9-11-2022",
+            "12:00",
             "AB 1231 CD",
             "Toyota Avanza",
-            "Ajur remuk ngasi koyo roti bakar ngarepan FT"
+            "Ajur remuk ngasi koyo roti bakar ngarepan FT",
+            ""
         )
-
     }
 }

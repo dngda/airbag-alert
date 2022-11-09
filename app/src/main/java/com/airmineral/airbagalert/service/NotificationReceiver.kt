@@ -40,7 +40,7 @@ class NotificationReceiver : BroadcastReceiver() {
             } else {
                 @Suppress("DEPRECATION")
                 intent.getParcelableExtra("DATA")
-            } ?: Incident.EMPTY
+            } ?: Incident()
         context.showNotificationWithFullScreenIntent(incident)
     }
 

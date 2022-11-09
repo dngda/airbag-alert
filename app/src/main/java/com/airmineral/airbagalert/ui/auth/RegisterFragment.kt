@@ -36,6 +36,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>() {
                 if (it != null) {
                     Log.d("RegisterFragment", "user observer: $it")
                     if (it.agencyName?.isNotEmpty() == true) {
+                        preferenceProvider.saveUserAgencyName(it.agencyName)
                         startActivity(Intent(requireContext(), MainActivity::class.java))
                         requireActivity().finish()
                         return@observe

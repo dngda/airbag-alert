@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">Airbag Alert</string>
+    <string name="app_name">Si Kece</string>
     <string name="default_notification_channel_name" translatable="false">fcm_default_name</string>
     <string name="title_activity_alert">AlertActivity</string>
-    <string name="btn_alert">Lihat Lokasi</string>
+    <string name="btn_alert">Lihat Lokasi saja</string>
     <string name="tv_alert">Info Kecelakaan!</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_agency">Nama Instansi</string>
@@ -31,4 +31,7 @@
     <string name="notify_5s_later">Notify 5s Later</string>
     <string name="logout">Logout</string>
     <string name="login">Login</string>
+    <string name="do_action_get_location"><![CDATA[Tindak & Lihat Lokasi]]></string>
+    <string name="unhandled">Belum ditangani!</string>
+    <string name="handled">Sudah ditangani oleh:\n%s</string>
 </resources>

@@ -11,7 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:theme="@style/ThemeOverlay.AirbagAlert.FullscreenContainer"
         tools:context=".ui.incident.AlertActivity">
 
         <ImageView
@@ -90,9 +89,10 @@
 
         <TextView
             android:id="@+id/alert_info_car_damaged"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:paddingHorizontal="32dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:paddingHorizontal="16dp"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="16sp"
@@ -101,23 +101,60 @@
             app:layout_constraintTop_toBottomOf="@id/alert_info_3"
             tools:text="Ajur kabeh ngasi koyo tahu gejrot, Ajur kabeh ngasi koyo tahu gejrot" />
 
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider"
+            android:layout_width="200dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            app:dividerColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/alert_info_car_damaged" />
+
+        <TextView
+            android:id="@+id/alert_info_handled_by"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="6dp"
+            android:textAlignment="center"
+            android:textColor="@color/cardview_dark_background"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider"
+            tools:text="Ditangani oleh:" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_alert_go_loc_only"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:backgroundTint="@color/colorPrimary"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="12dp"
+            android:text="@string/btn_alert"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="TextContrastCheck" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_alert_go"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="32dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/colorPrimary"
-            android:paddingHorizontal="32dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="4dp"
+            android:paddingHorizontal="24dp"
             android:paddingVertical="16dp"
-            android:text="@string/btn_alert"
+            android:text="@string/do_action_get_location"
             android:textColor="@color/white"
             android:textSize="18sp"
             app:icon="@drawable/ic_map"
             app:iconSize="32dp"
             app:iconTint="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_alert_go_loc_only"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="TextContrastCheck" />

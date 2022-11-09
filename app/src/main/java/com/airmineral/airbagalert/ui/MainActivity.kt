@@ -88,6 +88,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 startActivity(Intent(this, AuthActivity::class.java))
                 preferenceProvider.saveIsNewUser(true)
                 finish()
+            } else {
+                preferenceProvider.saveUserAgencyName(it.agencyName)
             }
         }
     }

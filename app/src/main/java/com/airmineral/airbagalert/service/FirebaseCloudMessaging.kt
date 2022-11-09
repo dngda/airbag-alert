@@ -26,13 +26,14 @@ class FirebaseCloudMessaging : FirebaseMessagingService(), KoinComponent {
 
         val data = Incident(
             message.data["id"].toString(),
-            message.data["latitude"].toString(),
-            message.data["longitude"].toString(),
+            message.data["latitude"]!!.toDouble(),
+            message.data["longitude"]!!.toDouble(),
             message.data["date"].toString(),
             message.data["time"].toString(),
             message.data["car_id"].toString(),
             message.data["car_model"].toString(),
             message.data["damaged"].toString(),
+            "",
         )
 
         Log.d("FCM", "Message data: $data")

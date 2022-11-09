@@ -16,7 +16,7 @@
         android:layout_margin="6dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="12dp"
-        app:strokeColor="@color/colorPrimary">
+        app:strokeWidth="2dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -28,11 +28,11 @@
                 android:layout_height="match_parent"
                 android:layout_marginVertical="16dp"
                 android:layout_marginStart="16dp"
+                android:contentDescription="@string/ilustrasi"
                 android:src="@drawable/ic_crash"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:contentDescription="@string/ilustrasi" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/item_incident_date"
@@ -44,17 +44,17 @@
                 android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@id/item_incident_icon"
                 app:layout_constraintTop_toTopOf="@id/item_incident_icon"
-                tools:text="Minggu, 20 Oktober 2022" />
+                tools:text="20 Oktober 2022" />
 
             <TextView
                 android:id="@+id/item_incident_time"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
+                android:layout_marginStart="16dp"
                 android:fontFamily="sans-serif"
                 android:text="@{incident.time}"
                 android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/item_incident_date"
                 app:layout_constraintTop_toTopOf="@id/item_incident_icon"
                 tools:text="21:00 WIB" />
 
@@ -85,6 +85,16 @@
                 app:layout_constraintStart_toStartOf="@+id/item_incident_date"
                 app:layout_constraintTop_toBottomOf="@id/item_incident_car_id"
                 tools:text="Toyota Avanza" />
+
+            <ImageView
+                android:id="@+id/item_ishandled"
+                android:layout_width="50dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/ic_check"
+                app:layout_constraintBottom_toBottomOf="@id/item_incident_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/item_incident_icon" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

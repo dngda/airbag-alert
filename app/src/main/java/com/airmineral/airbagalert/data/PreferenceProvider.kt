@@ -32,9 +32,17 @@ class PreferenceProvider(context: Context) {
         prefs.edit().putFloat("USERLNG", location.longitude.toFloat()).apply()
     }
 
+    fun saveUserAgencyName(agencyName: String?) {
+        prefs.edit().putString("AGENCYNAME", agencyName).apply()
+    }
+
     fun getUserSavedLocation(): LatLng? {
         val lat = prefs.getFloat("USERLAT", 0f)
         val lng = prefs.getFloat("USERLNG", 0f)
         return if (lat != 0f && lng != 0f) LatLng(lat.toDouble(), lng.toDouble()) else null
+    }
+
+    fun getUserSavedAgencyName(): String? {
+        return prefs.getString("AGENCYNAME", null)
     }
 }

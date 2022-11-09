@@ -83,7 +83,7 @@
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@android:drawable/ic_dialog_alert" />
+            android:resource="@drawable/ic_notif" />
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
             android:resource="@color/yellow" />

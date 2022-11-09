@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.card.MaterialCardView
 
 abstract class BaseRecyclerViewAdapter<T : Any, VB : ViewDataBinding>
     : RecyclerView.Adapter<BaseRecyclerViewAdapter.Companion.BaseViewHolder<VB>>() {
@@ -36,6 +37,8 @@ abstract class BaseRecyclerViewAdapter<T : Any, VB : ViewDataBinding>
 
     companion object {
         class BaseViewHolder<VB : ViewDataBinding>(val binding: VB) :
-            RecyclerView.ViewHolder(binding.root)
+            RecyclerView.ViewHolder(binding.root) {
+            lateinit var cardView: MaterialCardView
+        }
     }
 }

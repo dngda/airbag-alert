@@ -70,4 +70,4 @@ private fun Context.getFullScreenIntent(data: Incident): PendingIntent {
     )
 }
 
-private const val CHANNEL_ID = "mantap-jiwa"
+private const val CHANNEL_ID = "mantap-jiwa-asw"

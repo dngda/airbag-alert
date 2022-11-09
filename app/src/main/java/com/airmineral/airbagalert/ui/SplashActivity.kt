@@ -28,7 +28,7 @@ class SplashActivity : AppCompatActivity() {
                 } else {
                     @Suppress("DEPRECATION")
                     intent.getParcelableExtra("data")
-                } ?: Incident.EMPTY
+                } ?: Incident()
             Log.d("MainActivity", "onCreate: $incident")
 
             Toast.makeText(this, incident.toString(), Toast.LENGTH_SHORT).show()
