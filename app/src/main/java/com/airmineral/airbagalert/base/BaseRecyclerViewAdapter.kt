@@ -15,7 +15,8 @@ abstract class BaseRecyclerViewAdapter<T : Any, VB : ViewDataBinding>
     var items = mutableListOf<T>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun addItems(items: List<T>) {
+    fun updateItemsData(items: List<T>) {
+        if (this.items == items) return
         this.items = items as MutableList<T>
         notifyDataSetChanged()
     }

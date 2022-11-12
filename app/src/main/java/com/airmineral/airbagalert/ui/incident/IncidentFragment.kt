@@ -9,9 +9,6 @@ import com.airmineral.airbagalert.databinding.FragmentIncidentBinding
 import org.koin.android.ext.android.inject
 
 class IncidentFragment : BaseFragment<FragmentIncidentBinding>() {
-    companion object {
-        fun get() = IncidentFragment()
-    }
 
     private val viewModel: IncidentViewModel by inject()
 
@@ -37,9 +34,11 @@ class IncidentFragment : BaseFragment<FragmentIncidentBinding>() {
         viewModel.getIncidentList()
         val adapter = IncidentAdapter()
         binding.rvIncidents.adapter = adapter
-        viewModel.incidentList.observe(viewLifecycleOwner) {
-            if (!it.isNullOrEmpty()) adapter.addItems(it)
-            binding.fmIncidentEmpty.visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
+        viewModel.incidentList.observe(viewLifecycleOwner) { incidents ->
+            val sortedData = incidents.sortedBy { it.handled_by }
+            if (!incidents.isNullOrEmpty()) adapter.updateItemsData(sortedData)
+            binding.fmIncidentEmpty.visibility =
+                if (incidents.isEmpty()) View.VISIBLE else View.GONE
             binding.fragmentIncidentSwipeRefresh.isRefreshing = false
         }
     }
@@ -47,9 +46,5 @@ class IncidentFragment : BaseFragment<FragmentIncidentBinding>() {
     override fun onResume() {
         super.onResume()
         bindRecyclerView()
-    }
-
-    fun refreshData() {
-        viewModel.getIncidentList()
     }
 }

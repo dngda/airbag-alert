@@ -17,10 +17,10 @@ class AlertRepository(private val preferenceProvider: PreferenceProvider) {
 
     suspend fun getAlertData(): List<Incident> {
         val incidents = mutableListOf<Incident>()
-        db.collection(path).get().addOnSuccessListener { result ->
+        db.collection(path).orderBy("date").get().addOnSuccessListener { result ->
             incidents.addAll(result.toObjects(Incident::class.java))
         }.await()
-        return incidents.reversed()
+        return incidents
     }
 
     fun handleIncident(incidentId: String) {

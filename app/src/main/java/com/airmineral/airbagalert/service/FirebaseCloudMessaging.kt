@@ -39,6 +39,5 @@ class FirebaseCloudMessaging : FirebaseMessagingService(), KoinComponent {
         Log.d("FCM", "Message data: $data")
         this.showNotificationWithFullScreenIntent(data)
         alertRepository.saveAlertData(data)
-
     }
 }

@@ -37,7 +37,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/alert_info_1"
+            android:id="@+id/alert_info_date"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:text="@string/alert_info"
@@ -58,7 +58,7 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/alert_info_1"
+            app:layout_constraintTop_toBottomOf="@id/alert_info_date"
             tools:text="AB 1231 WH" />
 
         <TextView
@@ -78,7 +78,7 @@
             android:id="@+id/alert_info_3"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="@string/kerusakan"
             android:textAlignment="center"
             android:textColor="@color/cardview_dark_background"
@@ -89,8 +89,8 @@
 
         <TextView
             android:id="@+id/alert_info_car_damaged"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginHorizontal="16dp"
             android:paddingHorizontal="16dp"
             android:textAlignment="center"
@@ -99,7 +99,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/alert_info_3"
-            tools:text="Ajur kabeh ngasi koyo tahu gejrot, Ajur kabeh ngasi koyo tahu gejrot" />
+            tools:text="Ajur kabeh ngasi koyo tahu gejrot" />
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider"

@@ -31,6 +31,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private val preferenceProvider: PreferenceProvider by inject()
 
     override fun setupViews(savedInstanceState: Bundle?) {
+        title = "Daftar Kejadian Kecelakaan"
         if (savedInstanceState == null) {
             changeFragment(IncidentFragment())
         }

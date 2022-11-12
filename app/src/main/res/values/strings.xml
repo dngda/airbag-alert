@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Si Kece</string>
+    <string name="app_name">SIKECE</string>
     <string name="default_notification_channel_name" translatable="false">fcm_default_name</string>
     <string name="title_activity_alert">AlertActivity</string>
     <string name="btn_alert">Lihat Lokasi saja</string>
@@ -14,7 +14,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="alert_info">Telah terjadi Kecelakaan\nyang memicu Airbag sebuah mobil:</string>
+    <string name="alert_info">Telah terjadi Kecelakaan pada \n%s pukul %s \nyang memicu Airbag sebuah mobil:</string>
     <string name="cd_car">Car crash top view</string>
     <string name="prompt_location">Lokasi Instansi</string>
     <string name="btn_daftar">Daftar</string>
@@ -34,4 +34,5 @@
     <string name="do_action_get_location"><![CDATA[Tindak & Lihat Lokasi]]></string>
     <string name="unhandled">Belum ditangani!</string>
     <string name="handled">Sudah ditangani oleh:\n%s</string>
+    <string name="centang">Centang</string>
 </resources>

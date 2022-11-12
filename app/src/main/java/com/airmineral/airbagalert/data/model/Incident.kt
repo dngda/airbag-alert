@@ -3,6 +3,7 @@ package com.airmineral.airbagalert.data.model
 import android.os.Parcelable
 import com.google.firebase.firestore.DocumentId
 import kotlinx.parcelize.Parcelize
+import java.util.*
 
 @Parcelize
 data class Incident(
@@ -33,5 +34,28 @@ data class Incident(
             "Ajur remuk ngasi koyo roti bakar ngarepan FT",
             ""
         )
+
+
+    }
+
+    fun convertDate(input: String): String {
+        val inpSp = input.split("-")
+        val date = Calendar.getInstance()
+        date.set(Calendar.DAY_OF_MONTH, inpSp[0].toInt())
+        date.set(Calendar.MONTH, inpSp[1].toInt() - 1)
+        date.set(Calendar.YEAR, inpSp[2].toInt())
+        return "${
+            date.getDisplayName(
+                Calendar.DAY_OF_WEEK,
+                Calendar.LONG,
+                Locale.getDefault()
+            )
+        }, ${date.get(Calendar.DAY_OF_MONTH)} ${
+            date.getDisplayName(
+                Calendar.MONTH,
+                Calendar.LONG,
+                Locale.getDefault()
+            )
+        } ${date.get(Calendar.YEAR)}"
     }
 }

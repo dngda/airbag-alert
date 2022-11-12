@@ -37,6 +37,8 @@ class AlertActivity :
         binding.alertInfoCarId.text = data.car_id
         binding.alertInfoCarModel.text = data.car_model
         binding.alertInfoCarDamaged.text = data.damaged
+        binding.alertInfoDate.text =
+            getString(R.string.alert_info, data.convertDate(data.date), data.time)
 
         if (data.handled_by.isEmpty()) {
             binding.alertInfoHandledBy.apply {
@@ -62,7 +64,6 @@ class AlertActivity :
 
         binding.btnAlertGo.setOnClickListener {
             intentToGoogleMap()
-            IncidentFragment.get().refreshData()
             alertRepository.handleIncident(data.id)
             binding.btnAlertGo.isEnabled = false
             binding.alertInfoHandledBy.apply {
