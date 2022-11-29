@@ -26,7 +26,7 @@ class IncidentAdapter : BaseRecyclerViewAdapter<Incident, ItemIncidentBinding>()
         holder.cardView = holder.binding.root as MaterialCardView
         holder.cardView.strokeColor = Color.TRANSPARENT
 
-        if (items[position].handled_by.isEmpty()) {
+        if (items[position].handled_by?.isEmpty() == true || items[position].handled_by == "") {
             animateCardView(holder)
             holder.binding.itemIncidentIcon.setImageResource(R.drawable.ic_crash_red)
             holder.binding.itemIncidentCarId.setTextColor(Color.RED)

@@ -1,5 +1,6 @@
 package com.airmineral.airbagalert.ui.incident
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import org.koin.android.ext.android.inject
 class IncidentFragment : BaseFragment<FragmentIncidentBinding>() {
 
     private val viewModel: IncidentViewModel by inject()
+    private lateinit var adapter: IncidentAdapter
 
     override fun getLayoutBinding(): (LayoutInflater, ViewGroup?, Boolean) -> FragmentIncidentBinding {
         return FragmentIncidentBinding::inflate
@@ -32,7 +34,7 @@ class IncidentFragment : BaseFragment<FragmentIncidentBinding>() {
 
     private fun bindRecyclerView() {
         viewModel.getIncidentList()
-        val adapter = IncidentAdapter()
+        adapter = IncidentAdapter()
         binding.rvIncidents.adapter = adapter
         viewModel.incidentList.observe(viewLifecycleOwner) { incidents ->
             val sortedData = incidents.sortedBy { it.handled_by }
@@ -43,8 +45,10 @@ class IncidentFragment : BaseFragment<FragmentIncidentBinding>() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun onResume() {
         super.onResume()
-        bindRecyclerView()
+        viewModel.getIncidentList()
+        adapter.notifyDataSetChanged()
     }
 }

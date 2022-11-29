@@ -16,8 +16,8 @@ android {
         applicationId "com.airmineral.airbagalert"
         minSdk 23
         targetSdk 33
-        versionCode 3
-        versionName "1.1.1"
+        versionCode 4
+        versionName "1.1.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -57,7 +57,7 @@ dependencies {
 
     implementation 'androidx.work:work-runtime-ktx:2.7.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.1'
     implementation 'com.google.firebase:firebase-messaging-ktx:23.1.0'
     implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
 

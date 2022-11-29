@@ -16,7 +16,7 @@ data class Incident(
     val car_id: String,
     val car_model: String,
     val damaged: String,
-    val handled_by: String,
+    val handled_by: String?,
 ) : Parcelable {
 
     constructor() : this("", 0.0, 0.0, "", "", "", "", "", "")

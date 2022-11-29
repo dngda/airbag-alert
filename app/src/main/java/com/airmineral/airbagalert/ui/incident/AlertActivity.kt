@@ -40,7 +40,7 @@ class AlertActivity :
         binding.alertInfoDate.text =
             getString(R.string.alert_info, data.convertDate(data.date), data.time)
 
-        if (data.handled_by.isEmpty()) {
+        if (data.handled_by?.isEmpty() == true) {
             binding.alertInfoHandledBy.apply {
                 text = context.getString(R.string.unhandled)
                 setTextColor(resources.getColor(android.R.color.holo_red_dark, null))
